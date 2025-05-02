@@ -1,15 +1,19 @@
-import Dashboard from '@/components/Dashboard';
-import InstallationAndDeviceManagement from '@/components/Installation$AndDeviceManagement';
-import OnboardingExperience from '@/components/OboardingExperience';
-import UserProfileSettings from '@/components/UserProfileSettings';
+import CallToAction from '@/components/CallToAction';
+import Features from '@/components/Features';
+import Hero from '@/components/Hero';
+import HowItWorks from '@/components/HowItWorks';
+import Testimonials from '@/components/Testimonials';
+import TrustSection from '@/components/TrustSection';
 
 export default function Home() {
   return (
     <main>
-      {/* <Dashboard /> */}
-      {/* <UserProfileSettings /> */}
-      {/* <InstallationAndDeviceManagement /> */}
-      <OnboardingExperience />
+      <Hero />
+      <Features />
+      <HowItWorks />
+      <TrustSection />
+      <Testimonials />
+      <CallToAction />
     </main>
   );
 }

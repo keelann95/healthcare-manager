@@ -48,8 +48,7 @@ const CallToAction = () => {
                 </div>
                 <div>
                   <select className="w-full px-4 py-3 rounded-lg bg-white/20 border border-blue-300/30 focus:border-blue-300 focus:outline-none text-white">
-                    <opti
-                    on value="" className="bg-blue-800">
+                    <option value="" className="bg-blue-800">
                       I am a...
                     </option>
                     <option value="patient" className="bg-blue-800">
