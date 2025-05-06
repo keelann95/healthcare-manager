@@ -2,6 +2,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { 
   ArrowRight, 
   ArrowLeft, 
@@ -61,6 +62,7 @@ export default function OnboardingExperience() {
     emergencyAccess: false
   });
   
+  const router = useRouter();
   // Progress bar calculation
   const progressPercentage = (currentStep / totalSteps) * 100;
   
@@ -133,6 +135,9 @@ export default function OnboardingExperience() {
   const completeOnboarding = () => {
     // In a real app, you would save all data and redirect to the dashboard
     alert('Onboarding completed! In a real app, you would be redirected to the dashboard with your preferences saved.');
+    setTimeout(() => {
+      router.push('/dashboard') 
+    }, 1000);
   };
   
   return (

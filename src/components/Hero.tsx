@@ -30,7 +30,7 @@ const Hero = () => {
 
             <AnimatedElement animation="fadeInUp" delay={0.4}>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <Button href="#contact" variant="primary" size="lg">
+                <Button href="/Authenticator" variant="primary" size="lg">
                   Get Started
                 </Button>
                 <Button href="#demo" variant="secondary" size="lg">
