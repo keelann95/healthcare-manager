@@ -1,0 +1,15 @@
+{
+    "builds": [
+      {
+        "src": "index.ts",
+        "use": "@vercel/node"
+      }
+    ],
+    "build": {
+      "env": {
+        "TS_NODE_PROJECT": "tsconfig.json"
+      },
+      "command": "tsc --skipLibCheck"
+    }
+  }
+  
