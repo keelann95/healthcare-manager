@@ -23,7 +23,7 @@ export default function AuthPage() {
   const [name, setName] = useState('');
 
   const router = useRouter();
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     if (e) e.preventDefault();
     // In a real app, you would handle authentication here
     console.log('Form submitted:', { isLogin, email, password, role, name });
