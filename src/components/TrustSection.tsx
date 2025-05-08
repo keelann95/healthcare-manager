@@ -1,6 +1,5 @@
 import React from 'react';
 import { CheckCircle, ShieldCheck } from 'lucide-react';
-import SectionHeading from './ui/SectionHeading';
 import AnimatedElement from './ui/AnimatedElement';
 
 const certifications = [

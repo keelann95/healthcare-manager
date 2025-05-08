@@ -23,7 +23,7 @@ export async function getRecords() {
   return await db.getAll(STORE_NAME);
 }
 
-export async function saveRecord(record: any) {
+export async function saveRecord(record: unknown) {
   const db = await getDB();
   if (!db) return;
   await db.add(STORE_NAME, record);

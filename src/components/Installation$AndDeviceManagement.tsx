@@ -7,7 +7,6 @@ import {
   Database,
   Gauge,
   Wifi,
-  ChevronDown,
   Info,
   Check,
   X,

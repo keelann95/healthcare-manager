@@ -1,18 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import {
-  Users,
-  Search,
-  Filter,
-  Plus,
-  MoreVertical,
-  Shield,
-  Mail,
-  X,
-  Check,
-  AlertTriangle,
-} from 'lucide-react';
+import { Users, Search, Filter, Plus, Shield, Mail, X, AlertTriangle } from 'lucide-react';
 import Button from '../components/ui/Button';
 
 interface User {

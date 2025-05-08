@@ -1,18 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import {
-  Calendar,
-  Clock,
-  AlertCircle,
-  Plus,
-  Bell,
-  History,
-  PlusCircle,
-  Filter,
-  Search,
-  ChevronRight,
-  X,
-} from 'lucide-react';
+import { Clock, AlertCircle, Plus, Bell, History, Search, ChevronRight, X } from 'lucide-react';
 import Button from '../components/ui/Button';
 
 interface Medication {

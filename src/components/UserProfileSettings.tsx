@@ -257,7 +257,6 @@ export default function UserProfileSettings() {
                         <input
                           type="checkbox"
                           name="anonymizeSharingData"
-                          checked={userData.anonymizeSharingData}
                           onChange={handleInputChange}
                           className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
@@ -270,7 +269,6 @@ export default function UserProfileSettings() {
                         <input
                           type="checkbox"
                           name="requireConsentForSharing"
-                          checked={userData.requireConsentForSharing}
                           onChange={handleInputChange}
                           className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
@@ -283,7 +281,6 @@ export default function UserProfileSettings() {
                         <input
                           type="checkbox"
                           name="limitSharingScope"
-                          checked={userData.limitSharingScope}
                           onChange={handleInputChange}
                           className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
@@ -300,7 +297,6 @@ export default function UserProfileSettings() {
                       <input
                         type="checkbox"
                         name="trackDataAccess"
-                        checked={userData.trackDataAccess}
                         onChange={handleInputChange}
                         className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                       />
@@ -585,7 +581,6 @@ export default function UserProfileSettings() {
                           <input
                             type="checkbox"
                             name="healthMetricAlerts"
-                            checked={userData.healthMetricAlerts}
                             onChange={handleInputChange}
                             disabled={!userData.notificationsEnabled}
                             className="sr-only peer"
@@ -605,7 +600,6 @@ export default function UserProfileSettings() {
                           <input
                             type="checkbox"
                             name="securityAlerts"
-                            checked={userData.securityAlerts}
                             onChange={handleInputChange}
                             disabled={!userData.notificationsEnabled}
                             className="sr-only peer"
@@ -625,7 +619,6 @@ export default function UserProfileSettings() {
                         <input
                           type="checkbox"
                           name="inAppNotifications"
-                          checked={userData.inAppNotifications}
                           onChange={handleInputChange}
                           disabled={!userData.notificationsEnabled}
                           className={`h-4 w-4 rounded border-gray-300 ${userData.notificationsEnabled ? 'text-blue-600 focus:ring-blue-500' : 'text-gray-400'}`}
@@ -641,7 +634,6 @@ export default function UserProfileSettings() {
                         <input
                           type="checkbox"
                           name="emailNotifications"
-                          checked={userData.emailNotifications}
                           onChange={handleInputChange}
                           disabled={!userData.notificationsEnabled}
                           className={`h-4 w-4 rounded border-gray-300 ${userData.notificationsEnabled ? 'text-blue-600 focus:ring-blue-500' : 'text-gray-400'}`}
@@ -656,7 +648,6 @@ export default function UserProfileSettings() {
                         <input
                           type="checkbox"
                           name="pushNotifications"
-                          checked={userData.pushNotifications}
                           onChange={handleInputChange}
                           disabled={!userData.notificationsEnabled}
                           className={`h-4 w-4 rounded border-gray-300 ${userData.notificationsEnabled ? 'text-blue-600 focus:ring-blue-500' : 'text-gray-400'}`}
@@ -707,7 +698,6 @@ export default function UserProfileSettings() {
                         <input
                           type="checkbox"
                           name="autoArchiveOldData"
-                          checked={userData.autoArchiveOldData}
                           onChange={handleInputChange}
                           className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
@@ -720,7 +710,6 @@ export default function UserProfileSettings() {
                         <input
                           type="checkbox"
                           name="compressArchivedData"
-                          checked={userData.compressArchivedData}
                           onChange={handleInputChange}
                           className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
@@ -733,7 +722,6 @@ export default function UserProfileSettings() {
                         <input
                           type="checkbox"
                           name="autoDeleteOldData"
-                          checked={userData.autoDeleteOldData}
                           onChange={handleInputChange}
                           className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                         />

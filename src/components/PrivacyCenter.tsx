@@ -1,15 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import {
-  Shield,
-  Lock,
-  Eye,
-  FileText,
-  Settings,
-  AlertCircle,
-  CheckCircle,
-  HelpCircle,
-} from 'lucide-react';
+import { Shield, Lock, Eye, Settings, AlertCircle, CheckCircle, HelpCircle } from 'lucide-react';
 import Button from '../components/ui/Button';
 
 const PrivacyCenter = () => {
