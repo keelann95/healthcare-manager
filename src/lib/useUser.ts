@@ -8,7 +8,7 @@ export function useUser() {
   useEffect(() => {
     const mockUser = {
       name: 'Alice',
-      role: 'provider',
+      role: 'patient',
     };
 
     setUser(mockUser);

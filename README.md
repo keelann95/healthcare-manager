@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Decentralized Healthcare Data Manager
 
-## Getting Started
+A modern, secure platform for managing healthcare data with advanced privacy features and AI-powered insights.
 
-First, run the development server:
+![Platform Preview](./public/Health-care.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Secure Data Management**
+  - End-to-end encryption
+  - Decentralized storage
+  - HIPAA compliant
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **User-Specific Portals**
+  - Patient Dashboard
+  - Provider Portal
+  - Admin Interface
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Advanced Analytics**
+  - AI-powered health insights
+  - Interactive data visualizations
+  - Pattern recognition
 
-## Learn More
+- **Privacy Controls**
+  - Granular access management
+  - Audit logging
+  - Privacy-first architecture
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vite
+- Recharts for data visualization
+- Lucide React for icons
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📋 Pages & Routing
 
-## Deploy on Vercel
+- `/` - Landing page with platform overview
+- `/provider` - Healthcare provider portal
+- `/dashboard` - Patient dashboard
+- `/admin` - Administrative interface
+- `/visualizations` - Health data visualizations
+- `/medications` - Medication management
+- `/data` - Data import/export center
+- `/insights` - AI health insights
+- `/backup` - Backup & recovery
+- `/docs` - Documentation
+- `/privacy` - Privacy center
+- `/profile` - User profile management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚦 Getting Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/keelann95/healthcare-manager
+   ```
+
+2. Install dependencies:
+   ```bash
+   cd healthcare-manager
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## 🔒 Security Features
+
+- Zero-knowledge architecture
+- Military-grade encryption
+- Decentralized data storage
+- Comprehensive audit logging
+- Role-based access control
+
+## 📱 User Interfaces
+
+### Patient Portal
+- Health metrics dashboard
+- Medical history
+- Appointment management
+- Medication tracking
+- AI-powered health insights
+
+### Provider Interface
+- Patient management
+- Medical records access
+- Secure messaging
+- Treatment planning
+- Data analytics
+
+### Admin Dashboard
+- User management
+- System monitoring
+- Security controls
+- Audit logs
+- Analytics
+
+## 🎯 Upcoming Features
+
+- Backend API with Node.js
+- Real-time notifications
+- Mobile application
+- Integration with EHR systems
+- Enhanced AI capabilities
+- Telemedicine support
+
+## 📖 Documentation
+
+Comprehensive documentation is available at `/docs`, including:
+- API Reference
+- Security Overview
+- User Guides
+- Integration Instructions
+- Privacy Policies
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🌟 Support
+
+For support, please open an issue in the GitHub repository or contact our support team.
+
+---
+
+**Note:** This is currently a frontend implementation. Backend services with Node.js are under development and will be integrated soon.
