@@ -5,7 +5,12 @@ import Footer from '@/components/Footer';
 import { AdminHeader, PatientHeader, ProviderHeader } from '@/components/Header';
 import { useUser } from '@/lib/useUser';
 
-const AppHeader = ({ user }) => {
+type User = {
+  name: string;
+  role: 'admin' | 'provider' | 'patient';
+};
+
+const AppHeader = ({ user }: { user: User | null }) => {
   if (!user) return null;
 
   switch (user.role) {
