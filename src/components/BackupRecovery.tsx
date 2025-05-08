@@ -10,7 +10,6 @@ import {
   Download,
   Upload,
   Settings,
-  RefreshCw,
   CheckCircle,
   Shield,
   HardDrive,

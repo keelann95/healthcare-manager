@@ -1,4 +1,3 @@
-import AIHealthInsights from '@/components/AIHealthInsights';
 import AuditLogs from '@/components/AuditLogs';
 import React from 'react';
 

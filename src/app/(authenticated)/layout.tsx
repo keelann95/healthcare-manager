@@ -1,13 +1,8 @@
 'use client';
 // app/(auth)/layout.tsx
-import { AuthCheck } from '@/components/AuthCheck';
-
-export function AuthenticatedLayout({ children }: { children: React.ReactNode }) {
-  return <AuthCheck>{children}</AuthCheck>;
-}
 
 import Footer from '@/components/Footer';
-import Header, { AdminHeader, PatientHeader, ProviderHeader } from '@/components/Header';
+import { AdminHeader, PatientHeader, ProviderHeader } from '@/components/Header';
 import { useUser } from '@/lib/useUser';
 
 const AppHeader = ({ user }) => {
@@ -26,7 +21,7 @@ const AppHeader = ({ user }) => {
 };
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
-  const User = useUser(); // however you get user data (context, hook, etc.)
+  const User = useUser();
 
   return (
     <>

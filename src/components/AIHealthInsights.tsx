@@ -7,8 +7,6 @@ import {
   Activity,
   Pill,
   Settings,
-  AlertCircle,
-  ChevronRight,
   Search,
   Filter,
   RefreshCw,

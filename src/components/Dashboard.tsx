@@ -62,7 +62,7 @@ const generateMockHealthData = () => {
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
   // Generate 30 days worth of data
-  const timeScale = d3.scaleTime().domain([thirtyDaysAgo, now]).range([0, 29]);
+  // const timeScale = d3.scaleTime().domain([thirtyDaysAgo, now]).range([0, 29]);
 
   const systolicScale = d3.scaleLinear().domain([0, 29]).range([115, 125]);
 
