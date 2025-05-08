@@ -23,9 +23,8 @@ export default function AuthPage() {
   const [name, setName] = useState('');
 
   const router = useRouter();
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    if (e) e.preventDefault();
-    // In a real app, you would handle authentication here
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     console.log('Form submitted:', { isLogin, email, password, role, name });
 
     if (!isLogin) {
@@ -229,8 +228,11 @@ export default function AuthPage() {
 
             <button
               type="button"
-              href="#"
-              onClick={handleSubmit}
+              onClick={(e) => {
+                e.preventDefault();
+                handleSubmit(e);
+                // router.push('/');
+              }}
               className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium rounded-lg shadow-md hover:from-blue-700 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               {isLogin ? 'Sign In' : 'Create Account'}
