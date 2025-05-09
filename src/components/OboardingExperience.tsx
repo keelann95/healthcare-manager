@@ -25,6 +25,63 @@ import {
   LucideProps,
 } from 'lucide-react';
 
+// Type definitions
+interface UserData {
+  name: string;
+  birthdate: string;
+  gender: string;
+  height: string;
+  weight: string;
+}
+
+interface PrivacyPreferences {
+  localStorageOnly: boolean;
+  anonymousAnalytics: boolean;
+  encryptData: boolean;
+  backupFrequency: 'daily' | 'weekly' | 'monthly' | 'manual';
+}
+
+interface EnabledFeatures {
+  medicationReminders: boolean;
+  healthInsights: boolean;
+  dataSharing: boolean;
+  emergencyAccess: boolean;
+}
+
+interface FeatureItemProps {
+  icon: React.ComponentType<LucideProps>;
+  title: string;
+  description: string;
+}
+
+interface ToggleOptionProps {
+  icon: React.ComponentType<LucideProps>;
+  title: string;
+  description: string;
+  isEnabled: boolean;
+  onChange: () => void;
+}
+
+interface BackupOptionProps {
+  label: string;
+  isSelected: boolean;
+  onClick: () => void;
+}
+
+interface ImportOptionProps {
+  title: string;
+  description: string;
+  icon: React.ComponentType<LucideProps>;
+  isSelected: boolean;
+  onClick: () => void;
+  isDisabled: boolean;
+}
+
+interface NextStepItemProps {
+  title: string;
+  description: string;
+}
+
 export default function OnboardingExperience() {
   // Current step in the onboarding process
   const [currentStep, setCurrentStep] = useState(1);
@@ -49,7 +106,7 @@ export default function OnboardingExperience() {
   });
 
   // Data import states
-  const [selectedImportOption, setSelectedImportOption] = useState(null);
+  const [selectedImportOption, setSelectedImportOption] = useState<string | null>(null);
   const [importProgress, setImportProgress] = useState(0);
   const [isImporting, setIsImporting] = useState(false);
 
@@ -66,7 +123,7 @@ export default function OnboardingExperience() {
   const progressPercentage = (currentStep / totalSteps) * 100;
 
   // Helper function to handle user data input changes
-  const handleUserDataChange = (e) => {
+  const handleUserDataChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setUserData({
       ...userData,
@@ -75,7 +132,7 @@ export default function OnboardingExperience() {
   };
 
   // Helper function to handle privacy preference toggles
-  const handlePrivacyToggle = (key) => {
+  const handlePrivacyToggle = (key: keyof PrivacyPreferences) => {
     setPrivacyPreferences({
       ...privacyPreferences,
       [key]: !privacyPreferences[key],
@@ -83,7 +140,7 @@ export default function OnboardingExperience() {
   };
 
   // Helper function to handle feature toggles
-  const handleFeatureToggle = (key) => {
+  const handleFeatureToggle = (key: keyof EnabledFeatures) => {
     setEnabledFeatures({
       ...enabledFeatures,
       [key]: !enabledFeatures[key],
@@ -91,7 +148,7 @@ export default function OnboardingExperience() {
   };
 
   // Simulate import process
-  const startImport = (option) => {
+  const startImport = (option: string) => {
     setSelectedImportOption(option);
     setIsImporting(true);
     setImportProgress(0);
@@ -697,7 +754,7 @@ export default function OnboardingExperience() {
 }
 
 // Helper components
-const FeatureItem = ({ icon: Icon, title, description }) => (
+const FeatureItem: React.FC<FeatureItemProps> = ({ icon: Icon, title, description }) => (
   <div className="flex items-start">
     <div className="bg-blue-50 p-2 rounded-md mr-4">
       <Icon className="h-5 w-5 text-blue-600" />
@@ -709,9 +766,21 @@ const FeatureItem = ({ icon: Icon, title, description }) => (
   </div>
 );
 
-const QrCodeIcon = (props) => <QrCode {...props} />;
+const QrCodeIcon = (props: any) => <QrCode {...props} />;
 
-const ToggleOption = ({ icon: Icon, title, description, isEnabled, onChange }) => (
+const ToggleOption = ({
+  icon: Icon,
+  title,
+  description,
+  isEnabled,
+  onChange,
+}: {
+  icon: any;
+  title: any;
+  description: any;
+  isEnabled: any;
+  onChange: any;
+}) => (
   <div className="flex items-start justify-between">
     <div className="flex items-start flex-1">
       <div className={`p-2 rounded-md mr-4 ${isEnabled ? 'bg-blue-50' : 'bg-gray-100'}`}>
@@ -740,7 +809,15 @@ const ToggleOption = ({ icon: Icon, title, description, isEnabled, onChange }) =
   </div>
 );
 
-const BackupOption = ({ label, isSelected, onClick }) => (
+const BackupOption = ({
+  label,
+  isSelected,
+  onClick,
+}: {
+  label: any;
+  isSelected: any;
+  onClick: any;
+}) => (
   <button
     className={`py-2 px-3 rounded-md text-sm font-medium transition ${
       isSelected
@@ -756,7 +833,7 @@ const BackupOption = ({ label, isSelected, onClick }) => (
 // / Continuing the implementation of additional components needed for OnboardingExperience.tsx
 
 // Helper components for showing next steps in Step 5
-const NextStepItem = ({ title, description }) => (
+const NextStepItem = ({ title, description }: { title: any; description: any }) => (
   <div className="flex items-center">
     <div className="bg-blue-100 p-1 rounded-full mr-3">
       <ChevronRight className="h-4 w-4 text-blue-600" />
@@ -865,7 +942,21 @@ const stepTitle = (step: number) => {
   }
 };
 
-const ImportOption = ({ title, description, icon: Icon, isSelected, onClick, isDisabled }) => (
+const ImportOption = ({
+  title,
+  description,
+  icon: Icon,
+  isSelected,
+  onClick,
+  isDisabled,
+}: {
+  title: any;
+  description: any;
+  icon: any;
+  isSelected: any;
+  onClick: any;
+  isDisabled: any;
+}) => (
   <button
     className={`flex items-start p-4 rounded-lg border transition ${
       isDisabled

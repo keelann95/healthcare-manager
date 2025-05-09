@@ -112,7 +112,10 @@ const columns = [
   }),
   columnHelper.accessor('nextAppointment', {
     header: 'Next Appointment',
-    cell: (info) => (info.getValue() ? format(info.getValue(), 'MMM d, yyyy') : 'Not scheduled'),
+    cell: (info) => {
+      const value = info.getValue();
+      return value instanceof Date ? format(value, 'MMM d, yyyy') : 'Not scheduled';
+    },
   }),
   columnHelper.display({
     id: 'actions',

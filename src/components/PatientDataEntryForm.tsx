@@ -91,7 +91,7 @@ export default function PatientDataEntryForm() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -144,7 +144,7 @@ export default function PatientDataEntryForm() {
   };
 
   // Handle vital sign input changes
-  const handleVitalsChange = (field, value) => {
+  const handleVitalsChange = (field: any, value: any) => {
     setFormData((prev) => ({
       ...prev,
       vitals: {
@@ -155,7 +155,7 @@ export default function PatientDataEntryForm() {
   };
 
   // Handle blood pressure input changes
-  const handleBPChange = (type, value) => {
+  const handleBPChange = (type: any, value: any) => {
     setFormData((prev) => ({
       ...prev,
       vitals: {
@@ -185,7 +185,7 @@ export default function PatientDataEntryForm() {
   };
 
   // Remove medication
-  const removeMedication = (id) => {
+  const removeMedication = (id: number) => {
     setFormData((prev) => ({
       ...prev,
       medications: prev.medications.filter((med) => med.id !== id),
@@ -210,7 +210,7 @@ export default function PatientDataEntryForm() {
   };
 
   // Remove symptom
-  const removeSymptom = (id) => {
+  const removeSymptom = (id: number) => {
     setFormData((prev) => ({
       ...prev,
       symptoms: prev.symptoms.filter((symptom) => symptom.id !== id),
@@ -236,7 +236,7 @@ export default function PatientDataEntryForm() {
   };
 
   // Remove appointment
-  const removeAppointment = (id) => {
+  const removeAppointment = (id: number) => {
     setFormData((prev) => ({
       ...prev,
       appointments: prev.appointments.filter((appt) => appt.id !== id),

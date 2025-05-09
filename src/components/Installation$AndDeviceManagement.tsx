@@ -16,18 +16,24 @@ import {
   Zap,
 } from 'lucide-react';
 
+interface SyncedDevice {
+  id: number;
+  name: string;
+  lastSync: string;
+  status: 'active' | 'inactive';
+}
 export default function InstallationAndDeviceManagement() {
   // State for installation status
   const [isInstalled, setIsInstalled] = useState(false);
   const [storageUsed, setStorageUsed] = useState(0);
   const [storageAvailable, setStorageAvailable] = useState(0);
   const [isOnline, setIsOnline] = useState(true);
-  const [syncedDevices, setSyncedDevices] = useState([
+  const [syncedDevices, setSyncedDevices] = useState<SyncedDevice[]>([
     { id: 1, name: 'iPhone 13', lastSync: '2 hours ago', status: 'active' },
     { id: 2, name: 'MacBook Pro', lastSync: '5 mins ago', status: 'active' },
     { id: 3, name: 'iPad Air', lastSync: '2 days ago', status: 'inactive' },
   ]);
-  const [openSection, setOpenSection] = useState('installation');
+  const [openSection, setOpenSection] = useState<string | null>('installation');
 
   // Check if app is installed
   useEffect(() => {
@@ -53,16 +59,16 @@ export default function InstallationAndDeviceManagement() {
     };
   }, []);
 
-  const toggleSection = (section) => {
+  const toggleSection = (section: string) => {
     setOpenSection(openSection === section ? null : section);
   };
 
-  const formatSize = (size) => {
+  const formatSize = (size: number): string => {
     if (size < 1024) return size + ' MB';
     return (size / 1024).toFixed(2) + ' GB';
   };
 
-  const syncDevice = (id) => {
+  const syncDevice = (id: number) => {
     setSyncedDevices(
       syncedDevices.map((device) =>
         device.id === id ? { ...device, lastSync: 'Just now', status: 'active' } : device
@@ -70,7 +76,7 @@ export default function InstallationAndDeviceManagement() {
     );
   };
 
-  const removeDevice = (id) => {
+  const removeDevice = (id: number) => {
     setSyncedDevices(syncedDevices.filter((device) => device.id !== id));
   };
 
