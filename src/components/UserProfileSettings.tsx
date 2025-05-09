@@ -42,7 +42,7 @@ export default function UserProfileSettings() {
   // Mock encryption key
   const encryptionKey = 'e8b5f2a7-c391-4d3a-b94c-5f8a7d901234';
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     const { name, value, type, checked } = e.target;
     setUserData({
       ...userData,

@@ -2,6 +2,8 @@ import React from 'react';
 import { DivideIcon as LucideIcon } from 'lucide-react';
 import AnimatedElement from './AnimatedElement';
 
+type LucideIcon = /*unresolved*/ any;
+
 interface FeatureCardProps {
   icon: LucideIcon;
   title: string;

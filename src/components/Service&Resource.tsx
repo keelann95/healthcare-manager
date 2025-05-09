@@ -26,7 +26,7 @@ export default function SupportResources() {
   const [activeTab, setActiveTab] = useState('documentation');
   const [expandedFaq, setExpandedFaq] = useState(null);
 
-  const toggleFaq = (index) => {
+  const toggleFaq = (index: any) => {
     setExpandedFaq(expandedFaq === index ? null : index);
   };
 
@@ -171,14 +171,19 @@ export default function SupportResources() {
   };
 
   // Filter resources based on search query
-  const filteredResources = Object.keys(resources).reduce((acc, category) => {
-    acc[category] = resources[category].filter(
-      (item) =>
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    return acc;
-  }, {});
+  const filteredResources = Object.keys(resources).reduce(
+    (acc, category) => {
+      acc[category as keyof typeof resources] = resources[
+        category as keyof typeof resources
+      ].filter(
+        (item) =>
+          item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      return acc;
+    },
+    {} as typeof resources
+  );
 
   const filteredFaqs = faqs.filter(
     (faq) =>

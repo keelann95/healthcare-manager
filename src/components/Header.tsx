@@ -43,6 +43,14 @@ const BaseHeader = ({
   userRole,
   userAvatar,
   notificationCount = 0,
+}: {
+  logo: any;
+  title: any;
+  navItems: any;
+  actionButton: any;
+  userRole: any;
+  userAvatar: any;
+  notificationCount?: number | undefined;
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -77,7 +85,7 @@ const BaseHeader = ({
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6 relative">
-            {navItems.slice(0, 4).map((item, index) => (
+            {navItems.slice(0, 4).map((item: any, index: number) => (
               <a
                 key={index}
                 href={item.href}
@@ -108,7 +116,7 @@ const BaseHeader = ({
                   </svg>
                 </button>
                 <div className="absolute top-full mt-2 w-40 bg-white border rounded shadow-lg hidden group-hover:block z-50">
-                  {navItems.slice(4).map((item, index) => (
+                  {navItems.slice(4).map((item: any, index: number) => (
                     <a
                       key={index}
                       href={item.href}
@@ -218,7 +226,7 @@ const BaseHeader = ({
               </div>
             )}
 
-            {navItems.map((item, index) => (
+            {navItems.map((item: any, index: number) => (
               <a
                 key={index}
                 href={item.href}
@@ -384,7 +392,7 @@ export const PatientHeader = ({ patientName = 'Jane Doe', notificationCount = 2 
 };
 
 // Export a component that allows selecting the appropriate header based on user role
-export const defaultHeader = ({ userRole, userData }) => {
+export const defaultHeader = ({ userRole, userData }: { userRole: any; userData: any }) => {
   switch (userRole) {
     case 'admin':
       return <AdminHeader userName={userData?.name} notificationCount={userData?.notifications} />;
@@ -423,6 +431,8 @@ export const defaultHeader = ({ userRole, userData }) => {
             href: '/Authenticator',
             icon: <LogIn className="h-4 w-4" />,
           }}
+          userRole="guest" // <-- Add a valid role string
+          userAvatar={<img src="/avatar.jpg" alt="User avatar" className="h-8 w-8 rounded-full" />} // <-- Add a placeholder or real avatar
         />
       );
   }
