@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from 'react';
 
-type User = {
+export type User = {
   name: string;
-  role: string;
+  role: 'admin' | 'provider' | 'patient';
 };
+
 export function useUser() {
   const [user, setUser] = useState<User | null>(null);
 

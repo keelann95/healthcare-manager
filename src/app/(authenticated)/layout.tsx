@@ -4,11 +4,7 @@
 import Footer from '@/components/Footer';
 import { AdminHeader, PatientHeader, ProviderHeader } from '@/components/Header';
 import { useUser } from '@/lib/useUser';
-
-type User = {
-  name: string;
-  role: 'admin' | 'provider' | 'patient';
-};
+import type { User } from '@/lib/useUser'; // Use shared type
 
 const AppHeader = ({ user }: { user: User | null }) => {
   if (!user) return null;
@@ -26,11 +22,11 @@ const AppHeader = ({ user }: { user: User | null }) => {
 };
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
-  const User = useUser();
+  const user = useUser();
 
   return (
     <>
-      <AppHeader user={User} />
+      <AppHeader user={user} />
       <main className="pt-16">{children}</main>
       <Footer />
     </>
